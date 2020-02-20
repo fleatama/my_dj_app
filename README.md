@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使い方
+YouTubeから好きな動画を引用してプレイリストを自作し、それを共有出来るWebアプリケーションです。
+制作者がYouTubeの本家のプレイリスト機能をもう少し便利に詳細に選別して使いたいと感じたために制作しました。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
