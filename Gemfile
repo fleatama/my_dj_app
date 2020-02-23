@@ -37,6 +37,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'spring-commands-rspec'
+  gem 'sqlite3', '1.3.13'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -48,13 +53,20 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :development, :test do
-  gem 'sqlite3', '1.3.13'
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
-  gem 'faker'
+group :test do
+gem 'rails-controller-testing', '1.0.2'
+gem 'minitest-reporters', '1.1.14'
+gem 'guard', '2.13.0'
+gem 'guard-minitest', '2.4.4'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'
+gem 'capybara', '~> 2.13'
+gem 'database_cleaner'
+gem 'launchy'
+gem 'selenium-webdriver'
 end
+
 
 group :production do
   gem 'pg', '0.20.0'
