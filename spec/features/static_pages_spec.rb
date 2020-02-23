@@ -1,31 +1,29 @@
 require 'rails_helper'
 
 describe 'Home' do
-  specify '画面の表示' do
+  specify 'タイトルの表示' do
     visit '/static_pages/home'
-    expect(page).to have_css('h1', text: 'StaticPages')
+    expect(page).to have_title 'Home | MyTube App'
   end
 end
 
 describe 'Help' do
-  specify '画面の表示' do
+  specify 'タイトルの表示' do
     visit '/static_pages/help'
-    expect(page).to have_css('h1', text: 'Help')
+    expect(page).to have_title 'Help | MyTube App'
   end
 end
 
-
-
 describe 'About' do
-  specify '画面の表示' do
+  specify 'タイトルの表示' do
     visit '/static_pages/about'
-    expect(page).to have_css('h1', text: 'About')
+    expect(page).to have_title 'About | MyTube App'
   end
 end
 
 describe 'Contact' do
-  specify '画面の表示' do
+  specify 'タイトルの表示' do
     visit '/static_pages/contact'
-    expect(page).to have_css('h1', text: 'Contact')
+    expect(page).to have_title 'Contact | MyTube App'
   end
 end
