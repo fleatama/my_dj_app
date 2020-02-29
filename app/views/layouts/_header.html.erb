@@ -12,18 +12,24 @@
         <li class="nav-item"><a href="/" class="nav-link"><button class="btn btn-info btn-md">Home</button></a></li>
         <li class="nav-item"><a href="/help" class="nav-link"><button class="btn btn-info btn-md">Help</button></a></li>
         <% if user_signed_in? %>
-          <li class="dropdown">
-            <!-- 切替ボタンの設定 -->
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Users
-            </a>
-              <!-- ドロップメニューの設定 -->
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Settings</a>
-              <a class="dropdown-item" href="users/sign_out">Logout</a>
-            </ul><!-- /.dropdown-menu -->
-          </li><!-- /.dropdown -->
+        <div class="dropdown">
+          <!-- 切替ボタンの設定 -->
+          <li class="nav-item btn btn-info dropdown-toggle" href="#" role="button btn-info btn-md" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Users
+          </li>
+            <!-- ドロップメニューの設定 -->
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li class="dropdown-item">
+            <%= link_to "Profile", root_path %>
+          </li>
+          <li class="dropdown-item">
+            <%= link_to "Settings" %>
+          </li>
+          <li class="dropdown-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          </li>
+          </ul><!-- /.dropdown-menu -->
+        </ul><!-- /.dropdown -->
         <% else %>
           <li class="nav-item"><a href="/login" class="nav-link"><button class="btn btn-info btn-md">Login</button></a></li>
         <% end %>
