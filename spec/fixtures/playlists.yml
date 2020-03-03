@@ -1,0 +1,19 @@
+asmr:
+  content: ""
+  created_at: <%= 10.minutes.ago %>
+
+music:
+  content: ""
+  created_at: <%= 20.minutes.ago %>
+
+food:
+  content: ""
+  created_at: <%= 30.minutes.ago %>
+
+idol:
+  content: ""
+  created_at: <%= 40.minutes.ago %>
+
+dance:
+  content: ""
+  created_at: <%= 50.minutes.ago %>
