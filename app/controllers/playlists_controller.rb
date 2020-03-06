@@ -2,7 +2,7 @@ class PlaylistsController < ApplicationController
   before_action :set_playlist, only: [:show, :edit, :update, :destroy]
 
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.all.page(params[:page])
   end
 
   def show

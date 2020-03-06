@@ -1,0 +1,7 @@
+<li id="playlist-<%= playlist.id %>">
+  <span class="user"><%= link_to playlist.user.name, playlist.user %></span>
+  <span class="content"><%= playlist.content %></span>
+  <span class="timestamp">
+  Posted <%= time_ago_in_words(playlist.created_at) %>ago.
+  </span>
+</li>
