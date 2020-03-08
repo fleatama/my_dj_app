@@ -1,0 +1,11 @@
+<%= form_for(@playlist) do |f| %>
+  <%= render 'shared/error_messages', object:f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "プレイリストを作成する" %>
+  </div>
+  <div class="field">
+    <%= f.label :youtube_url %>
+    <%= f.text_field :youtube_url %>
+  </div>
+  <%= f.submit "投稿する", class: "btn btn-primary" %>
+<% end %>

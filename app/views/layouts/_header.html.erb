@@ -20,7 +20,7 @@
               <!-- ドロップメニューの設定 -->
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li class="dropdown-item">
-              <%= link_to "プロフィール", users_path %>
+              <%= link_to "プロフィール", current_user.profile %>
             </li>
             <li class="dropdown-item">
               <%= link_to "設定", edit_user_registration_path %>
