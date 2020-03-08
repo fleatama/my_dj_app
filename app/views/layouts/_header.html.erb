@@ -20,13 +20,13 @@
               <!-- ドロップメニューの設定 -->
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li class="dropdown-item">
-              <%= link_to "Profile",  %>
+              <%= link_to "プロフィール", users_path %>
             </li>
             <li class="dropdown-item">
-              <%= link_to "Settings", edit_user_registration_path %>
+              <%= link_to "設定", edit_user_registration_path %>
             </li>
             <li class="dropdown-item">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             </li>
             </ul><!-- /.dropdown-menu -->
           </ul><!-- /.dropdown -->

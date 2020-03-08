@@ -1,10 +1,15 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
 
-  # このアクションを追加
+  #このアクションを追加
   def after_sign_up_path_for(resource)
     "/user/#{current_user.id}"
   end
+
+  # # ログイン後、playlists/indexに移動する
+  # def after_sign_in_path_for(resource)
+  #   user_path(resorce.id)
+  # end
 
   protected
 
