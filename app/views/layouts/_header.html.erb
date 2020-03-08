@@ -12,24 +12,24 @@
         <li class="nav-item"><a href="/" class="nav-link"><button class="btn btn-info btn-md">Home</button></a></li>
         <li class="nav-item"><a href="/help" class="nav-link"><button class="btn btn-info btn-md">Help</button></a></li>
         <% if user_signed_in? %>
-        <div class="dropdown">
-          <!-- 切替ボタンの設定 -->
-          <li class="nav-item btn btn-info dropdown-toggle" href="#" role="button btn-info btn-md" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Users
-          </li>
-            <!-- ドロップメニューの設定 -->
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li class="dropdown-item">
-            <%= link_to "Profile", root_path %>
-          </li>
-          <li class="dropdown-item">
-            <%= link_to "Settings", edit_user_registration_path %>
-          </li>
-          <li class="dropdown-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-          </li>
-          </ul><!-- /.dropdown-menu -->
-        </ul><!-- /.dropdown -->
+          <div class="dropdown">
+            <!-- 切替ボタンの設定 -->
+            <li class="nav-item btn btn-info dropdown-toggle" href="#" role="button btn-info btn-md" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Users
+            </li>
+              <!-- ドロップメニューの設定 -->
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li class="dropdown-item">
+              <%= link_to "Profile", root_path %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to "Settings", edit_user_registration_path %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            </li>
+            </ul><!-- /.dropdown-menu -->
+          </ul><!-- /.dropdown -->
         <% else %>
           <li class="nav-item"><a href="/login" class="nav-link"><button class="btn btn-info btn-md">Login</button></a></li>
         <% end %>
