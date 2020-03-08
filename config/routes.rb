@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # devise_for :users, :controllers => {
-  #   :registrations => 'users/registrations',
-  #   :sessions => 'users/sessions'
-  # }
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+  }
   root 'users#index'
   get  'help', to:'static_pages#help'
   get  'about', to:'static_pages#about'
