@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-6">
+        <div>
+          <%= movie.content %>
+          <br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <br>
+          <%= link_to 'Show', movie %>
+          <br>
+          <%= link_to 'Edit', edit_movie_path(movie) %>
+          <br>
+          <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Post', new_movie_path %>
+
+<%= paginate @movies %>

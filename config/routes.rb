@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     delete 'signout', to: 'devise/sessions#destroy'
   end
   resources :users, :only => [:index, :show]
+  resources :movies
   resources :playlists
 end

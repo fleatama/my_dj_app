@@ -1,67 +1,67 @@
 class MoviesController < ApplicationController
-  before_action :set_playlist, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [:show, :edit, :update, :destroy]
   # before_action :authenticate_user!
 
   def index
-    @playlists = Playlist.all.page(params[:page])
+    @movies = Movie.all.page(params[:page])
   end
 
   def show
   end
 
   def new
-    @playlist = Playlist.new
+    @movie = Movie.new
   end
 
   def edit
   end
 
   def create
-    @playlist = current_user.playlists.build(playlist_params)
-    url = params[:playlist][:youtube_url]
+    @movie = current_user.movies.build(movie_params)
+    url = params[:movie][:youtube_url]
     url = url.last(11)
-    @playlist.youtube_url = url
+    @movie.youtube_url = url
 
     respond_to do |format|
-      if @playlist.save
-        format.html { redirect_to @playlist, notice: 'Playlst was successfully created.' }
-        format.json { render :show, status: :created, location: @playlist }
+      if @movie.save
+        format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
+        format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
+        format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if @playlist.update(playlist_params)
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully updated.' }
+      if @movie.update(movie_params)
+        format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
         format.json { render :show, status: :ok,
-        location: @playlist }
+        location: @movie }
       else
         format.html { render :edt }
-        format.json { render json: @playlist.errors, status:
+        format.json { render json: @movie.errors, status:
         :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @playlist.destroy
+    @movie.destroy
     respond_to do |format|
-      format.html { redirect_to playlists_url, notice: 'Playlist was successfully destroyed.' }
+      format.html { redirect_to movies_url, notice: 'Movie was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
 
-    def set_playlist
-      @playlist = Playlist.find(params[:id])
+    def set_movie
+      @movie = Movie.find(params[:id])
     end
 
-    def playlist_params
-      params.require(:playlist).permit(:content, :youtube_url)
+    def movie_params
+      params.require(:movie).permit(:content, :youtube_url)
     end
 end
