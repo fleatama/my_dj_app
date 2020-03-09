@@ -2,17 +2,15 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h4>ユーザー名</h4>
+      <p>ユーザー名</p>
         <%= @user.name %>
-
-      <h4>プロフィール</h4>
+      <p>プロフィール</p>
       <%= @user.profile %>
-
     </section>
   </aside>
   <div class="col-md-8">
     <% if @user.playlists.any? %>
-      <h3>Playlistss (<%= @user.playlists.count %>)</h3>
+      <h3>Playlists (<%= @user.playlists.count %>)</h3>
       <ol class="playlists">
         <%= render @playlists %>
       </ol>

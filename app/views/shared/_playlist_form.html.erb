@@ -1,7 +1,7 @@
 <%= form_for(@playlist) do |f| %>
   <%= render 'shared/error_messages', object:f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "プレイリストを作成する" %>
+    <%= f.text_area :content, placeholder: "ここにタイトルを入力" %>
   </div>
   <div class="field">
     <%= f.label :youtube_url %>
