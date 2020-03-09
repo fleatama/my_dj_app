@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @playlist = current_user.playlists.build if user_signed_in?
+    @movie = current_user.movies.build if user_signed_in?
   end
 
   def help

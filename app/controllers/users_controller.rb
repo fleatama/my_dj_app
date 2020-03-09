@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   def show
     # @user = current_user
     @user = User.find(params[:id])
-    @playlists = @user.playlists.page(params[:page])
+    @movies = @user.movies.page(params[:page])
   end
 end
