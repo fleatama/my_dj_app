@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # プロフィール画面用のアクションを追加
   def index
-    @user = User.find_by(id: params[:id])
+    # @user = User.find_by(id: params[:id])
   end
 
   # GET /resource/sign_up

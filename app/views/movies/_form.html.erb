@@ -12,13 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :title %>
+    <%= form.text_area :title %>
   </div>
 
   <div class="field">
     <%= form.label :youtube_url %>
     <%= form.text_field :youtube_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :playlist %>
+    <%= form.text_field :playlist %>
+  </div>
+
+  <div class="field">
+    <%= form.label :playlist %>
+    <%= form.collection_check_boxes(:playlist_ids, Playlist.all, :id, :playlist_name) do |playlist| %>
+      <%= playlist.label do %>
+        <%= playlist.check_box %>
+        <%= playlist.text %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="actions">

@@ -5,16 +5,18 @@
       <p>ユーザー名</p>
         <%= @user.name %>
       <p>プロフィール</p>
-      <%= @user.profile %>
+        <%= @user.profile %>
+      <p>プレイリスト</p>
+        <%= @user.playlist_ids %>
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @user.movies.any? %>
-      <h3>Movies (<%= @user.movies.count %>)</h3>
-      <ol class="movies">
-        <%= render @movies %>
+    <% if @user.playlists.any? %>
+      <h3>Playlists (<%= @user.playlists.count %>)</h3>
+      <ol class="playlists">
+        <%= render @playlists %>
       </ol>
-      <%= paginate @movies %>
+      <%= paginate @playlists %>
     <% end %>
   </div>
 </div>

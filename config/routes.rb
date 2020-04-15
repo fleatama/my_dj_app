@@ -10,13 +10,15 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords'
   }
   devise_scope :user do
-    get 'user/:id', to: 'users/registrations#index'
+    # get 'user/:id', to: 'users/registrations'
     get 'signup', to: 'users/registrations#new'
     get 'login', to: 'devise/sessions#new'
     post 'login', to: 'devise/sessions#create'
     delete 'signout', to: 'devise/sessions#destroy'
   end
   resources :users, :only => [:index, :show]
-  resources :movies
+  resources :movies do
+    resources :playlists, only: [:create, :destroy]
+  end
   resources :playlists
 end

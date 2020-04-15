@@ -7,10 +7,12 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movie = Movie.find(params[:id])
   end
 
   def new
     @movie = Movie.new
+    @movie.movie_playlist_relations.build
   end
 
   def edit
@@ -62,6 +64,6 @@ class MoviesController < ApplicationController
     end
 
     def movie_params
-      params.require(:movie).permit(:content, :youtube_url)
+      params.require(:movie).permit(:title, :youtube_url, :playlist_name, { :playlist_ids => [ ] })
     end
 end
