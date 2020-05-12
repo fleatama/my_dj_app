@@ -13,7 +13,14 @@
 <p>
   <strong>プレイリスト</strong>
   <%= @movie.playlists.each do |playlist| %>
-    <%= playlist.playlist %>
+    <%= movie.playlist %>
+  <% end %>
+</p>
+
+<p>
+  <strong>プレイリスト</strong>
+  <%= @movie.playlists.each do |playlist| %>
+    <%= movies.movie_playlist_relations%>
   <% end %>
 </p>
 
