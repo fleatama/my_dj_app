@@ -23,18 +23,18 @@
 
   <div class="field">
     <%= form.label :playlist %>
-    <%= form.text_field :playlist %>
+    <%= form.text_area :playlist %>
   </div>
-
+<%#
   <div class="field">
     <%= form.label :playlist %>
-    <%= form.collection_check_boxes(:playlist_ids, Playlist.all, :id, :playlist_name) do |playlist| %>
-      <%= playlist.label do %>
-        <%= playlist.check_box %>
-        <%= playlist.text %>
-      <% end %>
-    <% end %>
-  </div>
+    <%# <%= form.collection_check_boxes(:playlist_ids, Playlist.all, :id, :playlist_name) do |playlist| %> %>
+      <%# <%= playlist.label do %> %>
+        <%# <%= playlist.check_box %> %>
+        <%# <%= playlist.text %> %>
+      <%# <% end %> %>
+    <%# <% end %> %>
+  <%# </div> %> %>
 
   <div class="actions">
     <%= form.submit %>
