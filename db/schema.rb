@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_132155) do
+ActiveRecord::Schema.define(version: 2020_03_10_090414) do
 
   create_table "movie_playlist_relations", force: :cascade do |t|
     t.integer "movie_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_132155) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "playlist_name"
     t.index ["user_id", "created_at"], name: "index_playlists_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
