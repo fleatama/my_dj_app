@@ -22,12 +22,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :playlist %>
-    <%= form.text_field :playlist %>
+    <%= form.label :playlist_name %>
+    <%= form.text_field :playlist_name %>
   </div>
 
   <div class="field">
-    <%= form.label :playlist %>
+    <%= form.label :playlist_name %>
     <%= form.collection_check_boxes(:playlist_ids, Playlist.all, :id, :playlist_name) do |playlist| %>
       <%= playlist.label do %>
         <%= playlist.check_box %>

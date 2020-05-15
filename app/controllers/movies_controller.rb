@@ -63,7 +63,12 @@ class MoviesController < ApplicationController
       @movie = Movie.find(params[:id])
     end
 
+    # def movie_params
+    #   params.require(:movie).permit(:title, :youtube_url)
+    #   params.require(:playlist).permit(:playlist_name, playlist_ids:[])
+    # end
+
     def movie_params
-      params.require(:movie).permit(:title, :youtube_url, :playlist_name, playlist_ids:[])
+      params.require(:movie).permit(:title, :youtube_url)
     end
 end

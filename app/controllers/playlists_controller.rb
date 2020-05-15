@@ -17,7 +17,10 @@ class PlaylistsController < ApplicationController
   end
 
   private
+    # def playlist_params
+    #   params.require(:playlist).permit(:title, :youtube_url, :playlist_name, playlist_ids: [])
+    # end
     def playlist_params
-      params.require(:playlist).permit(:title, :youtube_url, :playlist_name, playlist_ids: [])
+      params.require(:playlist).permit(:playlist_name, playlist_ids: [])
     end
 end
