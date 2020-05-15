@@ -8,11 +8,14 @@
         <%= @user.profile %>
       <p>プレイリスト</p>
         <%= @user.playlist_ids %>
+        <br>
+        <%= link_to 'ムービー一覧', movies_path %>
+
     </section>
   </aside>
   <div class="col-md-8">
     <% if @user.playlists.any? %>
-      <h3>Playlists (<%= @user.playlists.count %>)</h3>
+      <h3>Playlists (<%= current_user.playlists.count %>)</h3>
       <ol class="playlists">
         <%= render @playlists %>
       </ol>
