@@ -64,6 +64,5 @@ class MoviesController < ApplicationController
     end
 
     def movie_params
-      params.require(:movie).permit(:title, :youtube_url, :playlist_name, { :playlist_ids => [ ] })
-    end
+      params.require(:movie).permit(:title, :youtube_url, :playlist_name, playlist_ids:[])
 end
