@@ -2,7 +2,7 @@ class Movie < ApplicationRecord
   belongs_to :user, optional:true
   has_many :movie_playlist_relations
   has_many :playlists, through: :movie_playlist_relations,
-            foreign_key: "playlist_id"
+            foreign_key: "playlist_id",
             dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true

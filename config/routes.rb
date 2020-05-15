@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   resources :users, :only => [:index, :show]
   resources :movies do
-    resources :playlists, only: [:create, :destroy]
+    resource :playlists, only: [:create, :destroy]
   end
   resources :playlists
 end
