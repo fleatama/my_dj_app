@@ -1,9 +1,11 @@
 class Movie < ApplicationRecord
-  belongs_to :user, optional:true
+  # belongs_to :user, optional:true
+  belongs_to :user
   has_many :movie_playlist_relations
-  has_many :playlists, through: :movie_playlist_relations,
-            foreign_key: "playlist_id",
-            dependent: :destroy
+  has_many :playlists, through: :movie_playlist_relations
+  # has_many :playlists, through: :movie_playlist_relations,
+  #           foreign_key: "playlist_id",
+  #           dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :title, presence: true
