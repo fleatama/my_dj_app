@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :playlists, dependent: :destroy
   has_many :movies, dependent: :destroy
+  has_many :movie_playlist_relations, class_name: "Playlist",
+            foreign_key: "playlist_id",
+            dependent: :destroy
   validates :name, presence: true
   validates :profile, length: { maximum: 200 }
 end
