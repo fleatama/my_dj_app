@@ -3,7 +3,8 @@ class MoviesController < ApplicationController
   # before_action :authenticate_user!
 
   def index
-    @movies = Movie.all.page(params[:page])
+    # @movies = Movie.all.page(params[:page])
+    @movies = params[:playlist_id].present? ? Playlist.find(params[:playlist_id]).movies : Movie.all.page(params[:page])
   end
 
   def show
@@ -69,6 +70,6 @@ class MoviesController < ApplicationController
     # end
 
     def movie_params
-      params.require(:movie).permit(:title, :youtube_url, playlist_ids: [])
+      params.require(:movie).permit(:title, :youtube_url, :playlist_name, playlist_ids: [])
     end
 end
