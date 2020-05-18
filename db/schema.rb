@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_074325) do
+ActiveRecord::Schema.define(version: 2020_05_15_075836) do
 
   create_table "movie_playlist_relations", force: :cascade do |t|
-    t.integer "movie_id"
     t.integer "playlist_id"
+    t.integer "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_movie_playlist_relations_on_movie_id"
+    t.index ["playlist_id"], name: "index_movie_playlist_relations_on_playlist_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -29,7 +31,6 @@ ActiveRecord::Schema.define(version: 2020_05_18_074325) do
   end
 
   create_table "playlists", force: :cascade do |t|
-    t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

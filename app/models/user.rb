@@ -12,6 +12,6 @@ class User < ApplicationRecord
   #           foreign_key: "playlist_id",
   #           dependent: :destroy
   # has_many :movie_playlist_relations
-  validates :name, presence: true
-  validates :profile, length: { maximum: 200 }
+  # validates :name, presence: true
+  # validates :profile, length: { maximum: 200 }
 end
