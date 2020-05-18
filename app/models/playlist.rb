@@ -1,5 +1,5 @@
 class Playlist < ApplicationRecord
-  has_many :movie_playlist_relationss
+  has_many :movie_playlist_relationss, dependent: :destroy
   has_many :movies, through: :movie_playlist_relations
   # belongs_to :user, optional:true
   belongs_to :user

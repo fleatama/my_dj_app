@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
   # belongs_to :user, optional:true
   belongs_to :user
-  has_many :movie_playlist_relations
+  has_many :movie_playlist_relations, dependent: :destroy
   has_many :playlists, through: :movie_playlist_relations
   # has_many :playlists, through: :movie_playlist_relations,
   #           foreign_key: "playlist_id",
