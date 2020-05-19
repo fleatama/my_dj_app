@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get  'about', to:'static_pages#about'
   get  'contact', to:'static_pages#contact'
   get  '/', to: 'users#index'
+  # will_paginateの検索のためのルーティングの追加
+  get 'movie_list/:per' => 'movie#movie_list_page'
+  get 'movie_list' => 'movie#movie_list'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
