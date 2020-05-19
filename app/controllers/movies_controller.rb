@@ -8,17 +8,6 @@ class MoviesController < ApplicationController
     # @movies = params[:playlist_id].present? ? Playlist.find(params[:playlist_id]).movies : Movie.all
   end
 
-  # def movie_list
-  #   @page = 9
-  #   @movies = Movie.paginate(page: params[:page], per_page: @page)
-  # end
-
-  # def movie_list_page
-  #   @page = params[:per]
-  #   @movies = Movie.paginate(page: params[:page], per_page: @page)
-  #   render("movie_list")
-  # end
-
   def show
     @movie = Movie.find(params[:id])
   end
