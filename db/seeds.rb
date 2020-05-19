@@ -12,7 +12,16 @@ Movie.create([
   { title: '田所あずさ / 6thSingle - DEAREST DROP - 終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？ OP - Music Video Full Size', youtube_url: '94W5nENM0iM&' },
   { title: '[期間限定 Full] 内田真礼「youthful beautiful」Music Video ≪Uchida Maaya≫', youtube_url: 'z6-MIsN8gwE' },
   { title: '[期間限定 Full] 内田真礼「ギミー！レボリューション」Music Video ≪Uchida Maaya -Gimme! Revolution-≫
-  ', youtube_url: 'eSH-oDFJQho'}
+  ', youtube_url: 'eSH-oDFJQho'},
+  { title: 'サカナクション / 忘れられないの', youtube_url: 'BxqYUbNR-c0' },
+  { title: 'サカナクション - ミュージック（MUSIC VIDEO） -BEST ALBUM「魚図鑑」(3/28release)-
+', youtube_url: 'iVstp5Ozw2o' },
+  { title: 'サカナクション - 夜の踊り子（MUSIC VIDEO） -BEST ALBUM「魚図鑑」(3/28release)-
+', youtube_url: '6AozElbRnTM' },
+  { title: 'サカナクション - 『バッハの旋律を夜に聴いたせいです。』（MUSIC VIDEO） -BEST ALBUM「魚図鑑」(3/28release)-
+', youtube_url: 'tZbXHt3xPr8' },
+  { title: 'サカナクション - エンドレス（MUSIC VIDEO） -BEST ALBUM「魚図鑑」(3/28release)-
+', youtube_url: 'HZZk2Mq_yjA' }
 ])
 
 Playlist.create([
@@ -25,5 +34,6 @@ Playlist.create([
   { playlist_name: 'HYDE' },
   { playlist_name: 'VAMPS' },
   { playlist_name: '内田真礼' },
-  { playlist_name: '水樹奈々' }
+  { playlist_name: '水樹奈々' },
+  { playlist_name: 'Music' }
 ])
