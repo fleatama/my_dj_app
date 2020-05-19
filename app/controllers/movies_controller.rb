@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
 
   def index
     # @movies = Movie.all.page(params[:page])
-    @movies = params[:playlist_id].present? ? Playlist.find(params[:playlist_id]).movies : Movie.all.paginate(params[:page], per_page => 5)
+    @movies = params[:playlist_id].present? ? Playlist.find(params[:playlist_id]).movies : Movie.all.page(params[:page])
     # @movies = params[:playlist_id].present? ? Playlist.find(params[:playlist_id]).movies : Movie.all
   end
 
