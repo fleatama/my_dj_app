@@ -12,6 +12,8 @@
       %>
     <% end %>
 
+<%= paginate @movies %>
+
 <div class="container-fluid">
   <div class="row">
     <% @movies.each do |movie| %>

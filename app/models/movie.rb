@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  # 1ページに表示する件数の設定(Kaminari)
+  # pagination_per 10
   # belongs_to :user, optional:true
   # belongs_to :user
   has_many :movie_playlist_relations, dependent: :destroy
