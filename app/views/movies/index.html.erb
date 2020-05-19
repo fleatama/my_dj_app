@@ -2,15 +2,15 @@
 
 <h1>Movies</h1>
 
-    <%#= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
-      <%#= select_tag :playlist_id,
+    <%= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :playlist_id,
                      options_from_collection_for_select(Playlist.all, :id, :playlist_name, params[:playlist_id]),
                      {
                        prompt: 'プレイリストをタグで絞り込み検索',
                        onchange: 'submit(this.form);'
                      }
       %>
-    <%# end %>
+    <% end %>
 
 <%= paginate @movies %>
 
