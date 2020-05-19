@@ -2,7 +2,7 @@
 
 <h1>Movies</h1>
 
-<%= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
+    <%= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
       <%= select_tag :playlist_id,
                      options_from_collection_for_select(Playlist.all, :id, :playlist_name, params[:playlist_id]),
                      {
@@ -37,4 +37,4 @@
 
 <%= link_to 'New Movie', new_movie_path %>
 
-<%= paginate @movies %>
+<%= will_paginate @movies %>
