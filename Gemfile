@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise'
-gem 'kaminari'
+# gem 'kaminari'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '1.0.0'
 
