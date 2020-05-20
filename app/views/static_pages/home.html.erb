@@ -1,8 +1,33 @@
 <div class="jumbotron jumbotron-fluid jumbotron-extend">
   <div class="container">
     <h1>MyTube App</h1>
-    <%= link_to image_tag("record_icon.png") %>
     <p>このサイトはYouTubeの動画から自分好みのプレイリストを作成するためのアプリケーションです。</p>
-    <%= link_to "はじめる", "users/sign_up", class: "btn btn-info btn-lg" %>
+    <%= link_to image_tag("record_icon.png") %>
+    <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+        <!-- ユーザーがログインしていた時の処理 -->
+      <p>ユーザー名</p>
+      <%= current_user.name %>
+      <p>プロフィール</p>
+      <%= current_user.profile %>
+      <p> メールアドレス： <%= current_user.email %> </p>
+      <div class="row">
+        <aside class="col-md-4">
+          <section class="user_info">
+            <%= render 'shared/user_info' %>
+          </section>
+          <section class="movie_form">
+            <%= render 'shared/movie_form' %>
+          </section>
+          <section class="playlist_form">
+            <%= render 'shared/playlist_form' %>
+          </section>
+        </aside>
+      </div>
+    <% else %>
+      <!-- ユーザーがログインしていなかった時の処理 -->
+      <h2> 現在ログインしていません </h2>
+      <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+      <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+    <% end %>
   </div>
 </div>

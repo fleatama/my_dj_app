@@ -2,14 +2,19 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
+      <p>ユーザー名</p>
         <%= @user.name %>
-      </h1>
+      <p>プロフィール</p>
+        <%= @user.profile %>
+      <p>プレイリスト</p>
+        <%= @user.playlist_ids %>
+        <br>
+        <%= link_to 'ムービー一覧', movies_path %>
     </section>
   </aside>
   <div class="col-md-8">
     <% if @user.playlists.any? %>
-      <h3>Playlistss (<%= @user.playlists.count %>)</h3>
+      <h3>Playlists (<%= current_user.playlists.count %>)</h3>
       <ol class="playlists">
         <%= render @playlists %>
       </ol>

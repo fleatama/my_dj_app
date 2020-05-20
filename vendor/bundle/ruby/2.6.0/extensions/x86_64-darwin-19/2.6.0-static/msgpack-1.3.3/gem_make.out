@@ -1,5 +1,9 @@
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/msgpack-1.3.3/ext/msgpack
+<<<<<<< HEAD
 /Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200415-89630-zpsuhv.rb extconf.rb
+=======
+/Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200414-39814-dyjw5v.rb extconf.rb
+>>>>>>> paginate
 checking for ruby/st.h... yes
 checking for st.h... yes
 checking for rb_str_replace() in ruby.h... yes
@@ -39,4 +43,8 @@ linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/msgpack-1.3.3/ext/msgpack
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20200415-89630-1azkstq/msgpack
+=======
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20200414-39814-6r62h2/msgpack
+>>>>>>> paginate

@@ -1,5 +1,9 @@
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+<<<<<<< HEAD
 /Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200415-89630-edqz6w.rb extconf.rb
+=======
+/Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200414-39814-u6jb7a.rb extconf.rb
+>>>>>>> paginate
 creating Makefile
 
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
@@ -12,4 +16,8 @@ linking shared-object bootsnap/bootsnap.bundle
 
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20200415-89630-lfosrg/bootsnap
+=======
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20200414-39814-3yyjg2/bootsnap
+>>>>>>> paginate

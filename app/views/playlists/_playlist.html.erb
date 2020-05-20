@@ -1,0 +1,22 @@
+<li id="playlist-<%= playlist.id %>">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+          <div>
+            <%= playlist.playlist_name %>
+            <br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= playlist.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br>
+            <%= link_to 'Show', playlist %>
+            <br>
+            <%= link_to 'Edit', edit_playlist_path(playlist) %>
+            <br>
+            <%= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <span class="timestamp">
+   Posted <%= time_ago_in_words(playlist.created_at) %>ago.
+  </span>
+</li>

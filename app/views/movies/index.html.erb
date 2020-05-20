@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+    <%= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :playlist_id,
+                     options_from_collection_for_select(Playlist.all, :id, :playlist_name, params[:playlist_id]),
+                     {
+                       prompt: 'プレイリストをタグで絞り込み検索',
+                       onchange: 'submit(this.form);'
+                     }
+      %>
+    <% end %>
+
+<%= paginate @movies %>
+
+<div class="container-fluid">
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-6">
+        <div>
+          <%= movie.title %>
+          <br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <br>
+          <%= link_to 'Show', movie %>
+          <br>
+          <%= link_to 'Edit', edit_movie_path(movie) %>
+          <br>
+          <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <br>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %>
+<%= paginate @movies %>

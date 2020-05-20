@@ -1,5 +1,9 @@
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
+<<<<<<< HEAD
 /Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200415-89630-ehk72w.rb extconf.rb
+=======
+/Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200414-39814-1qnyvku.rb extconf.rb
+>>>>>>> paginate
 creating Makefile
 
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
@@ -72,4 +76,8 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.1/ext
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 libsass.bundle ./.gem.20200415-89630-1nmlmmd/sassc
+=======
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20200414-39814-wmr655/sassc
+>>>>>>> paginate

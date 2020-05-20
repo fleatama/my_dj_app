@@ -1,0 +1,5 @@
+<p><%= current_user.name %></p>
+<span><%= link_to "プロフィール", current_user %></span>
+<span><%= pluralize(current_user.playlists.count,"Playlist") %></span>
+<br>
+<span><%= link_to 'ムービー一覧', movies_path %></span>

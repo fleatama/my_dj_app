@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>タイトル</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>動画</strong><br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<p>
+  <strong>プレイリスト</strong>
+  <%= @movie.playlists.each do |playlist| %>
+    <%= playlist.playlist_name %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %>
+<%= link_to 'Back', movies_path %>

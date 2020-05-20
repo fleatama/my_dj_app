@@ -1,5 +1,9 @@
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
+<<<<<<< HEAD
 /Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200415-89630-lgjtjy.rb extconf.rb
+=======
+/Users/yamadatarou/.rbenv/versions/2.6.3/bin/ruby -I /Users/yamadatarou/.rbenv/versions/2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200414-39814-1kqgh27.rb extconf.rb
+>>>>>>> paginate
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for sys/select.h... yes
@@ -92,4 +96,8 @@ linking shared-object nio4r_ext.bundle
 
 current directory: /Users/yamadatarou/environment/my_dj_app/vendor/bundle/ruby/2.6.0/gems/nio4r-2.5.2/ext/nio4r
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20200415-89630-1ucp0u8
+=======
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20200414-39814-1cacqyi
+>>>>>>> paginate

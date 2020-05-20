@@ -10,18 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_070006) do
+ActiveRecord::Schema.define(version: 2020_05_15_075836) do
+
+  create_table "movie_playlist_relations", force: :cascade do |t|
+    t.integer "playlist_id"
+    t.integer "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_movie_playlist_relations_on_movie_id"
+    t.index ["playlist_id"], name: "index_movie_playlist_relations_on_playlist_id"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "youtube_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "title"
+    t.index ["user_id"], name: "index_movies_on_user_id"
+  end
 
   create_table "playlists", force: :cascade do |t|
-    t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "youtube_url"
+    t.text "playlist_name"
+    t.index ["user_id", "created_at"], name: "index_playlists_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "profile"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

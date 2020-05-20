@@ -3,16 +3,8 @@
     <h1>MyTube App</h1>
     <%= link_to image_tag("record_icon.png") %>
     <p>このサイトはYouTubeの動画から自分好みのプレイリストを作成するためのアプリケーションです。</p>
-    <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
-      <!-- ユーザーがログインしていた時の処理 -->
-
-      <h4> メールアドレス： <%= current_user.email %> </h4>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
-    <% else %>
-      <!-- ユーザーがログインしていなかった時の処理 -->
-      <h2> 現在ログインしていません </h2>
-      <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
-      <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
-    <% end %>
+    <%= link_to "はじめる", "users/sign_up", class: "btn btn-info btn-lg" %>
   </div>
 </div>
+
+

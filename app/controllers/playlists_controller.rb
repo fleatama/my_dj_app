@@ -1,68 +1,32 @@
 class PlaylistsController < ApplicationController
-  # before_action logged_in_user, :set_playlist, only: [:show, :edit, :update, :destroy]
-  before_action :set_playlist, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
 
   def index
-    @playlists = Playlist.all.page(params[:page])
-  end
 
-  def show
   end
 
   def new
     @playlist = Playlist.new
+    @playlist.movie_playlist_relations.build
   end
 
   def edit
   end
 
   def create
-    @playlist = current_user.playlists.build(playlist_params)
-    url = params[:playlist][:youtube_url]
-    url = url.last(11)
-    @playlist.youtube_url = url
-
-    respond_to do |format|
-      if @playlist.save
-        format.html { redirect_to @playlist, notice: 'Playlst was successfully created.' }
-        format.json { render :show, status: :created, location: @playlist }
-      else
-        format.html { render :new }
-        format.json { render json: @playlist.errors, status: :unprocessable_entity }
-      end
-    end
+    @playlist = Playlist.create(playlist_params)
+    redirect_to @playlist
   end
 
-  def update
-    respond_to do |format|
-      if @playlist.update(playlist_params)
-        format.html { redirect_to @playlist, notice: 'Playlist was successfully updated.' }
-        format.json { render :show, status: :ok,
-        location: @playlist }
-      else
-        format.html { render :edt }
-        format.json { render json: @playlist.errors, status:
-        :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @playlist.destroy
-    respond_to do |format|
-      format.html { redirect_to playlists_url, notice: 'Playlist was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  def show
+    @playlist = Playlist.find(params[:id])
   end
 
   private
-
-    def set_playlist
-      @playlist = Playlist.find(params[:id])
-    end
-
     def playlist_params
-      params.require(:playlist).permit(:content, :youtube_url)
+      params.require(:playlist).permit(:title, :youtube_url, :playlist_name, playlist_ids: [])
     end
+
+    # def playlist_params
+    #   params.require(:playlist).permit(:playlist_name, playlist_ids: [])
+    # end
 end
