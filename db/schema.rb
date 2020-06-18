@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_03_09_085934) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "movies", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "youtube_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_085934) do
 
   create_table "playlists", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "youtube_url"
@@ -46,4 +49,6 @@ ActiveRecord::Schema.define(version: 2020_03_09_085934) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "movies", "users"
+  add_foreign_key "playlists", "users"
 end
