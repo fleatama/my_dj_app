@@ -5,6 +5,8 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -17,6 +19,10 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'kaminari'
+gem 'solargraph'
+gem 'pry-rails'
+gem 'pry-doc'
+gem 'pry-byebug', group: :development
 # gem 'will_paginate'
 # gem 'bootstrap-will_paginate', '1.0.0'
 
@@ -44,7 +50,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'spring-commands-rspec'
-  gem 'sqlite3', '1.3.13'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
@@ -72,10 +77,6 @@ gem 'capybara', '~> 2.13'
 gem 'database_cleaner'
 gem 'launchy'
 gem 'selenium-webdriver'
-end
-
-group :production do
-  gem 'pg', '0.20.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
