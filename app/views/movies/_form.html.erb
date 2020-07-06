@@ -1,4 +1,4 @@
-<%= form_with(model: movie, local: true) do |form| %>
+<%= form_with(model:movie, local: true) do |form| %>
   <% if movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
@@ -12,29 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :タイトル %>
+    <br>
     <%= form.text_area :title %>
   </div>
 
   <div class="field">
-    <%= form.label :youtube_url %>
+    <%= form.label :YouTubeのURLを入力 %>
+    <br>
     <%= form.text_field :youtube_url %>
   </div>
 
-    <div class="field">
-      <%#= form.label :playlist_name %>
-      <%#= form.text_field :playlist_name %>
-    </div>
-
-    <div class="checkbox">
-      <%= form.label :playlist %>
-        <%= form.collection_check_boxes(:playlist_ids, Playlist.all, :id, :playlist_name) do |playlist| %>
-          <%= playlist.label do %>
-            <%= playlist.check_box %>
-          <%= playlist.text %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="checkbox">
+        <%= form.label :プレイリストを選択 %>
+        <br>
+          <%= form.collection_check_boxes(:playlist_ids, Playlist.all, :id, :playlist_name) do |playlist| %>
+            <%= playlist.label do %>
+              <%= playlist.check_box %>
+            <%= playlist.text %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>

@@ -2,12 +2,7 @@
 
 <p>
   <strong>タイトル</strong>
-  <%= @playlist.content %>
-</p>
-
-<p>
-  <strong>Youtube Url:</strong>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @playlist.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <%= @playlist.playlist_name %>
 </p>
 
 <%= link_to 'Edit', edit_playlist_path(@playlist) %>

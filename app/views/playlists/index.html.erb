@@ -1,19 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Playlists</h1>
+<h1>プレイリスト一覧</h1>
 
 <div class="container-fluid">
   <div class="row">
     <% @playlists.each do |playlist| %>
       <div class="col-md-6">
         <div>
-          <%= playlist.content %>
-          <br>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= playlist.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <%= playlist.playlist_name %>
           <br>
           <%= link_to 'Show', playlist %>
           <br>
-          <%= link_to 'Edit', edit_playlist_path(playlist) %>
           <br>
           <%= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
@@ -24,6 +21,6 @@
 
 <br>
 
-<%= link_to 'New Post', new_playlist_path %>
+<%= link_to 'プレイリストを作成', new_playlist_path %>
 
 <%= paginate @playlists %>

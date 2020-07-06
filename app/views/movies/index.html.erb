@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Movies</h1>
+<h1>動画一覧</h1>
 
     <%= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
       <%= select_tag :playlist_id,
@@ -10,9 +10,10 @@
                        onchange: 'submit(this.form);'
                      }
       %>
-    <% end %>
 
-<%= paginate @movies %>
+     <% end %>
+
+<br>
 
 <div class="container-fluid">
   <div class="row">
@@ -21,7 +22,9 @@
         <div>
           <%= movie.title %>
           <br>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div id="player">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           <br>
           <%= link_to 'Show', movie %>
           <br>
@@ -31,6 +34,49 @@
           <br>
         </div>
       </div>
+        <script>
+          var = playlist [
+            {videoId: '<%= movie.youtube_url %>'}
+          ]
+
+        // YoutubeのJSファイルをロードします。
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // YoutubeのJSファイルがロードされ実行されると、
+        // onYouTubeIframeAPIReadyメソッドが呼ばれるので、
+        // 再生準備を行います。
+        var player;
+        function onYouTubeIframeAPIReady() {
+          // "player"という文字列は、divのID属性の値を指定します。
+          player = new YT.Player('player', {
+            height: '315',
+            width: '560',
+            videoId: '<%= movie.youtube_url %>',
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+          });
+        }
+
+        // 再生が可能になると呼び出されます。
+        function onPlayerReady(event) {
+          // 再生を開始します。
+          event.target.playVideo();
+        }
+
+        // 再生した、停止したなどのプレーヤーのステータスが変わった場合に
+        // 呼び出されます。
+        function onPlayerStateChange(event) {
+          // 再生が終わったら、alertしてみます
+          if (event.data == YT.PlayerState.ENDED) {
+            alert('finish');
+          }
+        }
+        </script>
     <% end %>
   </div>
 </div>

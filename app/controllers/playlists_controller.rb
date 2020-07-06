@@ -1,7 +1,7 @@
 class PlaylistsController < ApplicationController
 
   def index
-
+    @playlists = Playlist.page(params[:page])
   end
 
   def new
@@ -21,12 +21,21 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
   end
 
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+    respond_to do |format|
+      format.html { redirect_to playlists_url, notice: 'Playlist was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
+    def set_playlist
+      @playlist = Playlist.find(params[:id])
+    end
+
     def playlist_params
       params.require(:playlist).permit(:title, :youtube_url, :playlist_name, playlist_ids: [])
     end
-
-    # def playlist_params
-    #   params.require(:playlist).permit(:playlist_name, playlist_ids: [])
-    # end
 end

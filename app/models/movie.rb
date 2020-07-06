@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
   # 1ページに表示する件数の設定(Kaminari)
-  paginates_per 9
+  paginates_per 10
   # belongs_to :user, optional:true
   # belongs_to :user
   has_many :movie_playlist_relations, dependent: :destroy
@@ -11,6 +11,7 @@ class Movie < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   # validates :user_id, presence: true
   # validates :title, presence: true
+  accepts_nested_attributes_for :playlists
 
   # def playlisted_by?(user)
   #   playlists.where(user_id: user.id).exists?

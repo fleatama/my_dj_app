@@ -1,11 +1,12 @@
 <%= form_for(@movie) do |f| %>
   <%= render 'shared/error_messages', object:f.object %>
+  <h4>動画のURLを新しく投稿する</h4>
   <div class="field">
     <%= f.text_area :title, placeholder: "ここに動画のタイトルを入力" %>
   </div>
   <div class="field">
     <%= f.label :youtube_url %>
-    <%= f.text_field :youtube_url %>
+    <%= f.text_field :youtube_url, placeholder: "ここにYouTubeのURLを入力" %>
   </div>
   <%= f.submit "投稿する", class: "btn btn-primary" %>
 <% end %>

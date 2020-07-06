@@ -9,7 +9,7 @@
 Movie.create([
   { title: 'サカナクション / 新宝島　-New Album「834.194」(6/19 release)-', youtube_url: 'LIlZCmETvsY' },
   { title: '水樹奈々「DISCOTHEQUE」MUSIC CLIP', youtube_url: 'Fe566fX9SWw' },
-  { title: '田所あずさ / 6thSingle - DEAREST DROP - 終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？ OP - Music Video Full Size', youtube_url: '94W5nENM0iM&' },
+  { title: '田所あずさ / 6thSingle - DEAREST DROP - 終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？ OP - Music Video Full Size', youtube_url: '94W5nENM0iM' },
   { title: '[期間限定 Full] 内田真礼「youthful beautiful」Music Video ≪Uchida Maaya≫', youtube_url: 'z6-MIsN8gwE' },
   { title: '[期間限定 Full] 内田真礼「ギミー！レボリューション」Music Video ≪Uchida Maaya -Gimme! Revolution-≫
   ', youtube_url: 'eSH-oDFJQho'},
@@ -35,5 +35,8 @@ Playlist.create([
   { playlist_name: 'VAMPS' },
   { playlist_name: '内田真礼' },
   { playlist_name: '水樹奈々' },
-  { playlist_name: 'Music' }
+  { playlist_name: 'Music' },
+  { playlist_name: 'L’Arc～en～Ciel' },
+  { playlist_name: '瞑想' },
+  { playlist_name: 'Programming' }
 ])

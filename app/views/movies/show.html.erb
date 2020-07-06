@@ -2,6 +2,7 @@
 
 <p>
   <strong>タイトル</strong>
+  <br>
   <%= @movie.title %>
 </p>
 
@@ -11,7 +12,7 @@
 </p>
 
 <p>
-  <strong>プレイリスト</strong>
+  <strong>プレイリスト</strong><br>
   <%= @movie.playlists.each do |playlist| %>
     <%= playlist.playlist_name %>
   <% end %>

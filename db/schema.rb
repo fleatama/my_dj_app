@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_075836) do
+ActiveRecord::Schema.define(version: 2020_05_15_075310) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "movie_playlist_relations", force: :cascade do |t|
-    t.integer "playlist_id"
-    t.integer "movie_id"
+    t.bigint "playlist_id"
+    t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_movie_playlist_relations_on_movie_id"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_075836) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "youtube_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_075836) do
   end
 
   create_table "playlists", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "playlist_name"
@@ -53,4 +56,8 @@ ActiveRecord::Schema.define(version: 2020_05_15_075836) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "movie_playlist_relations", "movies"
+  add_foreign_key "movie_playlist_relations", "playlists"
+  add_foreign_key "movies", "users"
+  add_foreign_key "playlists", "users"
 end

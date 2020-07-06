@@ -12,10 +12,12 @@ class MoviesController < ApplicationController
 
   def new
     @movie = Movie.new
+    @movie.playlists.build
     @movie.movie_playlist_relations.build
   end
 
   def edit
+    @movie.playlists.build
   end
 
   def create
@@ -36,6 +38,7 @@ class MoviesController < ApplicationController
   end
 
   def update
+    @movie.update(update_movie_params)
     respond_to do |format|
       if @movie.update(movie_params)
         format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
@@ -63,12 +66,15 @@ class MoviesController < ApplicationController
       @movie = Movie.find(params[:id])
     end
 
-    # def movie_params
-    #   params.require(:movie).permit(:title, :youtube_url)
-    #   params.require(:playlist).permit(:playlist_name, playlist_ids:[])
-    # end
-
     def movie_params
-      params.require(:movie).permit(:title, :youtube_url, :playlist_name, playlist_ids: [])
+      params.require(:movie).permit(:title, :youtube_url, playlist_attributes:[:playlist_name], playlist_ids: [])
+    end
+
+    def playlist_params
+      params.require(:playlist).permit(:playlist_name)
+    end
+
+    def update_movie_params
+      params.require(:movie).permit(:title, :youtube_url, playlist_attributes:[:playlist_name], playlist_ids: [])
     end
 end
