@@ -3,7 +3,9 @@ class MoviesController < ApplicationController
   # before_action :authenticate_user!
 
   def index
-    @movies = params[:playlist_id].present? ? Playlist.find(params[:playlist_id]).movies.page : Movie.page(params[:page])
+    @movies = params[:playlist_id].present? ? Playlist.all(params[:playlist_id]).movies.page : Movie.page(params[:page])
+    @movie = Playlist.find(params(:playlist_id))
+    gon.playlist_name = playlist_name
   end
 
   def show
@@ -71,7 +73,7 @@ class MoviesController < ApplicationController
     end
 
     def playlist_params
-      params.require(:playlist).permit(:playlist_name)
+      params.require(:playlist).permit(:playlist_name, playlist_ids: [])
     end
 
     def update_movie_params

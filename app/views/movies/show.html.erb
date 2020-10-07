@@ -8,13 +8,14 @@
 
 <p>
   <strong>動画</strong><br>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.youtube_url%>" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 <p>
   <strong>プレイリスト</strong><br>
   <%= @movie.playlists.each do |playlist| %>
-    <%= playlist.playlist_name %>
+  <%= playlist.playlist_name %>
   <% end %>
 </p>
 

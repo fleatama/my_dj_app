@@ -12,7 +12,6 @@ class Movie < ApplicationRecord
   # validates :user_id, presence: true
   # validates :title, presence: true
   accepts_nested_attributes_for :playlists
-
   # def playlisted_by?(user)
   #   playlists.where(user_id: user.id).exists?
   # end

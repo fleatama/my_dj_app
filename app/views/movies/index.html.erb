@@ -1,82 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <h1>動画一覧</h1>
-
-    <%= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
-      <%= select_tag :playlist_id,
-                     options_from_collection_for_select(Playlist.all, :id, :playlist_name, params[:playlist_id]),
-                     {
-                       prompt: 'プレイリストをタグで絞り込み検索',
-                       onchange: 'submit(this.form);'
-                     }
+<%= form_tag movies_path, method: :get, class: 'boards__searchForm' do %>
+<%= select_tag :playlist_id,
+        options_from_collection_for_select(Playlist.all, :id, :playlist_name, params[:playlist_id]),
+        {
+          prompt: 'プレイリストをタグで絞り込み検索',
+          onchange: 'submit(this.form);'
+        }
       %>
-
-     <% end %>
-
+<% end %>
 <br>
-
+<%= paginate @movies %>
 <div class="container-fluid">
   <div class="row">
     <% @movies.each do |movie| %>
-      <div class="col-md-6">
-        <div>
-          <%= movie.title %>
-          <br>
-          <div id="player">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <br>
-          <%= link_to 'Show', movie %>
-          <br>
-          <%= link_to 'Edit', edit_movie_path(movie) %>
-          <br>
-          <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <br>
+    <div class="col-md-6">
+      <div>
+        <%= movie.title %>
+        <div id="player">
+
+
         </div>
+        <br>
+        <%= link_to 'Show', movie %>
+        <br>
+        <%= link_to 'Edit', edit_movie_path(movie) %>
+        <br>
+        <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <br>
       </div>
-        <script>
-          var = playlist [
-            {videoId: '<%= movie.youtube_url %>'}
-          ]
-
-        // YoutubeのJSファイルをロードします。
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        // YoutubeのJSファイルがロードされ実行されると、
-        // onYouTubeIframeAPIReadyメソッドが呼ばれるので、
-        // 再生準備を行います。
-        var player;
-        function onYouTubeIframeAPIReady() {
-          // "player"という文字列は、divのID属性の値を指定します。
-          player = new YT.Player('player', {
-            height: '315',
-            width: '560',
-            videoId: '<%= movie.youtube_url %>',
-            events: {
-              'onReady': onPlayerReady,
-              'onStateChange': onPlayerStateChange
-            }
-          });
-        }
-
-        // 再生が可能になると呼び出されます。
-        function onPlayerReady(event) {
-          // 再生を開始します。
-          event.target.playVideo();
-        }
-
-        // 再生した、停止したなどのプレーヤーのステータスが変わった場合に
-        // 呼び出されます。
-        function onPlayerStateChange(event) {
-          // 再生が終わったら、alertしてみます
-          if (event.data == YT.PlayerState.ENDED) {
-            alert('finish');
-          }
-        }
-        </script>
+    </div>
     <% end %>
   </div>
 </div>
@@ -85,3 +39,4 @@
 
 <%= link_to 'New Movie', new_movie_path %>
 <%= paginate @movies %>
+
