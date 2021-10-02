@@ -5,23 +5,30 @@
 <%= select_tag :playlist_id,
         options_from_collection_for_select(Playlist.all, :id, :playlist_name, params[:playlist_id]),
         {
-          prompt: 'プレイリストをタグで絞り込み検索',
+          prompt: 'プレイリストをタグで絞り込み選択',
           onchange: 'submit(this.form);'
         }
       %>
 <% end %>
 <br>
 <%= paginate @movies %>
+
 <div class="container-fluid">
   <div class="row">
     <% @movies.each do |movie| %>
     <div class="col-md-6">
       <div>
         <%= movie.title %>
+        <div id="player"></div>
+        <br>
         <div id="player">
-
-
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/<%= movie.youtube_url %>"
+            frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+          <br>
         </div>
+        <br>
         <br>
         <%= link_to 'Show', movie %>
         <br>
@@ -35,8 +42,5 @@
   </div>
 </div>
 
-<br>
-
 <%= link_to 'New Movie', new_movie_path %>
 <%= paginate @movies %>
-

@@ -40,3 +40,4 @@ Playlist.create([
   { playlist_name: '瞑想' },
   { playlist_name: 'Programming' }
 ])
+

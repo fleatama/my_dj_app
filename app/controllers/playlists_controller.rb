@@ -9,8 +9,8 @@ class PlaylistsController < ApplicationController
     @playlist.movie_playlist_relations.build
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
   def create
     @playlist = Playlist.create(playlist_params)

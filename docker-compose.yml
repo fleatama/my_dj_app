@@ -15,3 +15,17 @@ services:
       - "3000:3000"
     depends_on:
       - db
+  pgadmin4:
+    image: dpage/pgadmin4:4.2
+    container_name: pgadmin4
+    ports:
+        - 8000:80
+    volumes:
+        - ./docker/pgadmin4:/var/lib/pgadmin
+    environment:
+        PGADMIN_DEFAULT_EMAIL: root
+        PGADMIN_DEFAULT_PASSWORD: root
+    hostname: pgadmin4
+    depends_on:
+      - db
+    restart: always

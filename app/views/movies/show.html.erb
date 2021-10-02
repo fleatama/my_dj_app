@@ -14,8 +14,11 @@
 
 <p>
   <strong>プレイリスト</strong><br>
-  <%= @movie.playlists.each do |playlist| %>
+  <!-- <%= @movie.playlists.each do |playlist| %>
   <%= playlist.playlist_name %>
+  <% end %> -->
+  <%= @movie.playlists.each do |playlist| %>
+  <% playlist.playlist_name %>
   <% end %>
 </p>
 

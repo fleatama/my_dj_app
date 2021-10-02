@@ -3,9 +3,7 @@ class MoviesController < ApplicationController
   # before_action :authenticate_user!
 
   def index
-    @movies = params[:playlist_id].present? ? Playlist.all(params[:playlist_id]).movies.page : Movie.page(params[:page])
-    @movie = Playlist.find(params(:playlist_id))
-    gon.playlist_name = playlist_name
+    @movies = params[:playlist_id].present? ? Playlist.find(params[:playlist_id]).movies.page : Movie.page(params[:page])
   end
 
   def show
