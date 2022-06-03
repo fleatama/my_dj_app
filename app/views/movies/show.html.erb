@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <p>
   <strong>タイトル</strong>
@@ -14,13 +16,10 @@
 
 <p>
   <strong>プレイリスト</strong><br>
-  <!-- <%= @movie.playlists.each do |playlist| %>
-  <%= playlist.playlist_name %>
-  <% end %> -->
   <%= @movie.playlists.each do |playlist| %>
-  <% playlist.playlist_name %>
-  <% end %>
+    <% playlist.playlist_name %>
+      <% end %>
 </p>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %>
-<%= link_to 'Back', movies_path %>
+<%= link_to 'Edit' , edit_movie_path(@movie) %>
+  <%= link_to 'Back' , movies_path %>
